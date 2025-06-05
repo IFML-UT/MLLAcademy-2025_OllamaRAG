@@ -2,7 +2,7 @@
 
 This is a fully local Retrieval-Augmented Generation (RAG) system using:
 
-- Ollama (`openthinker:7b` and `nomic-embed-text`)
+- Ollama (`llama3.1:latest` and `nomic-embed-text`)
 - ChromaDB for vector storage
 - PyMuPDF (`fitz`) for PDF parsing
 - A terminal-based chat interface

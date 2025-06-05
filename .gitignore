@@ -1,7 +1,35 @@
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.pyc
-.env
+*.py[cod]
+*.so
+
+# Virtual environments
+.env/
+.venv/
+env/
+venv/
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# PDF inputs
+docs/*.pdf
+
+# ChromaDB storage
 chroma_db/
-*.sqlite
+chroma_store/
+chroma_storage/
+
+# Ingestion tracking
+ingested.json
+
+# Logs and state
 *.log
-*.DS_Store
+*.sqlite
+
+# IDE/editor configs
+.vscode/
+
+# OS metadata
+.DS_Store
+Thumbs.db
