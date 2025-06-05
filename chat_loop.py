@@ -9,12 +9,12 @@ from ollama_runner import query_llm
 from termcolor import colored
 from tqdm import tqdm
 import time
-import threading
 
-def show_spinner(stop_event):
-    with tqdm(total=0, bar_format="{desc}", desc="🤖 Generating response from LLM... (press Ctrl+C to cancel)") as pbar:
-        while not stop_event.is_set():
-            time.sleep(0.1)
+def simulate_loading(message="🤖 Generating response from LLM...", seconds=5):
+    print(colored(message, "green"))
+    for _ in tqdm(range(seconds), desc="Processing", ncols=75):
+        time.sleep(1)
+    print()
 
 def chat_loop():
     print(colored("📚 Ollama Offline RAG Assistant", "green"))
@@ -28,7 +28,13 @@ def chat_loop():
                 break
 
             query_embedding = embed_text(query)
-            docs, embs, metas = search_similar_chunks(query_embedding)
+            result = search_similar_chunks(query_embedding)
+
+            if result is None:
+                print(colored("🫥 No relevant documents found. Try rephrasing your question.\n", "yellow"))
+                continue
+
+            docs, embs, metas = result
 
             if not docs:
                 print(colored("🫥 No relevant documents found. Try rephrasing your question.\n", "yellow"))
@@ -49,20 +55,9 @@ def chat_loop():
             print(doc.strip())
             print()
 
-            # Show LLM spinner
-            stop_event = threading.Event()
-            spinner_thread = threading.Thread(target=show_spinner, args=(stop_event,))
-            spinner_thread.start()
+            simulate_loading()
 
-            try:
-                start_time = time.time()
-                response = query_llm(query, doc)
-                elapsed = time.time() - start_time
-            finally:
-                stop_event.set()
-                spinner_thread.join()
-
-            print(colored(f"\n✅ Done in {elapsed:.2f} seconds.\n", "green"))
+            response = query_llm(query, doc)
             print(colored(response.strip(), "white"))
             print()
 
