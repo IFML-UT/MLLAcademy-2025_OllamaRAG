@@ -1,0 +1,17 @@
+# PDF processing
+pymupdf
+requests
+
+# Vector store
+chromadb
+sentence-transformers
+
+# Terminal and UX
+tqdm
+termcolor
+
+# LLM support
+langchain
+
+# Reranking
+scikit-learn
