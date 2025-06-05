@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # Main entrypoint that ties all components together
 # rag_pipeline.py
 
