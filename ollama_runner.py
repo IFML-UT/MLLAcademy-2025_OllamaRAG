@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 # Formats prompt and sends it to `openthinker:7b` using Ollama
 # ollama_runner.py
 

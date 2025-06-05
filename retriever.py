@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 # retriever.py
 
 import chromadb
@@ -17,7 +20,8 @@ collection = client.get_or_create_collection(
 def check_embedding_dimension():
     try:
         peek = collection.peek()
-        if peek.get("embeddings") and len(peek["embeddings"]) > 0:
+        embs = peek.get("embeddings")
+        if embs is not None and isinstance(embs, list) and len(embs) > 0:
             dim = len(peek["embeddings"][0])
             if dim == 768:
                 print("Collection expects embedding dimension: 768\n")

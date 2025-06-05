@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import fitz  # PyMuPDF
 
 def load_pdf_chunks(path, chunk_size=200, overlap=50):

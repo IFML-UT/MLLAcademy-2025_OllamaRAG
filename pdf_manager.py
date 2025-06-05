@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 # Detects new PDFs in docs/, skips already processed ones
 
 import os

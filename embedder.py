@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 # Sends text to Ollama to get embeddings using `nomic-embed-text`
 
 import requests

@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 # chat_loop.py
 
 from retriever import search_similar_chunks, rerank_results
