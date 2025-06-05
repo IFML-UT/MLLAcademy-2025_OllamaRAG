@@ -1,5 +1,8 @@
 # Local RAG with Ollama
 
+![Ollama title slide](GettingStarted/a.png)
+
+
 This is a fully local Retrieval-Augmented Generation (RAG) system using:
 
 - Ollama (`llama3.1:latest` and `nomic-embed-text`)
@@ -37,14 +40,16 @@ Download from https://ollama.com/download and install.
 
 ```bash
 ollama pull nomic-embed-text
-ollama pull openthinker:7b
+ollama pull llama3.1:latest
 ```
 
 ## 📂 Project Structure
 
 ```
 rag_local_ollama/
+├── GettingStarted/         # Lab guide we'll walk through in class
 ├── docs/                   # Place your PDFs here
+├── test_and_qa-Scripts/    # Extra testing scripts used for build - you won't need these
 ├── ingested.json           # Tracks processed PDFs
 ├── pdf_loader.py           # PDF chunking logic
 ├── embedder.py             # Embedding via Ollama
