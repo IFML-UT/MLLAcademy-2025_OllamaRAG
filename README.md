@@ -5,8 +5,8 @@
 
 This is a fully local Retrieval-Augmented Generation (RAG) system using:
 
-- Ollama (`llama3.1:latest` and `nomic-embed-text`)
-- ChromaDB for vector storage
+- Ollama (`llama3.1:latest` and `nomic-embed-text`) https://github.com/ollama/ollama
+- ChromaDB for vector storage https://github.com/chroma-core/chroma
 - PyMuPDF (`fitz`) for PDF parsing
 - A terminal-based chat interface
 
@@ -23,12 +23,23 @@ Use the following in your Conda environment:
 pip install pymupdf chromadb tqdm termcolor langchain scikit-learn
 ```
 
+> Important Note: w/in the classroom lab environment during camp, this has already been done for you.
+> Don't install them to your local user as you'll run into permissions issues w/in the lab setup. 
+> To access this cona environment run the `source /lusr ___________` command provided to you in class .
+
+> If you're not in lab, and trying this on your own, you will need the dependencies listed above. Please refer
+> the the `requirements.txt` file for the full list.
+```bash
+pip install -r requirements.txt
+```
+
 ### 2. Install Ollama
 
 - **Ubuntu**:
 ```bash
 curl -fsSL https://ollama.com/install.sh | sh
 ```
+
 - **macOS**:
 ```bash
 brew install ollama
@@ -41,6 +52,15 @@ Download from https://ollama.com/download and install.
 ```bash
 ollama pull nomic-embed-text
 ollama pull llama3.1:latest
+```
+
+You can check all the model files you have downloaded locall via ollama using: 
+```bash
+ollama list
+```
+Removing a model file is as easy as: 
+```bash
+ollama rm [model_name]
 ```
 
 ## 📂 Project Structure
@@ -74,7 +94,7 @@ This RAG is updatable and supports multiple PDF's.
 
 ## ❓ Ask Questions
 
-Ask a question in the terminal. Type `exit` to quit.
+Ask a question in the terminal. Type `exit` or `bye` to quit.
 
 ---
 
