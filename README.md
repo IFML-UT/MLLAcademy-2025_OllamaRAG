@@ -1,6 +1,6 @@
 # Local RAG with Ollama
 
-![Ollama title slide](GettingStarted/a.png)
+![Ollama title slide](slide_images/a.png)
 
 
 This is a fully local Retrieval-Augmented Generation (RAG) system using:
